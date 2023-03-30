@@ -102,7 +102,7 @@ abstract class BaseVmActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCom
     }
 
     /**
-     * 供子类BaseVmDbActivity 初始化Databinding操作
+     * 初始化Databinding操作
      */
     open fun initDataBind(): View? {
         mDatabind = inflateBindingWithGeneric(layoutInflater)
