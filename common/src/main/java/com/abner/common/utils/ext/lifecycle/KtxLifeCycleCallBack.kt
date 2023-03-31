@@ -3,8 +3,8 @@ package com.abner.common.utils.ext.lifecycle
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
-import com.abner.common.utils.ext.lifecycle.KtxActivityManger
-import com.abner.common.ext.util.logd
+import com.abner.common.utils.ext.logd
+
 
 /**
  * 作者　: hegaojian

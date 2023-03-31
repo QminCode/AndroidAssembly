@@ -141,7 +141,6 @@ project.ext {
             extension.testImplementation 'junit:junit:4.+'
             extension.androidTestImplementation 'androidx.test.ext:junit:1.1.2'
             extension.androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
             extension.kapt 'com.alibaba:arouter-compiler:1.5.2'
             if (appImplementation != "common") {
                 //common做为中间层，所有的Module都要依赖
@@ -184,13 +183,20 @@ project.ext {
                     // optional - Test helpers for Lifecycle runtime
                     extension.testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
 
-                    extension.implementation 'androidx.databinding:library:3.2.0-alpha11'
+                    extension.implementation 'androidx.databinding:databinding-runtime:4.2.0'
 
                     extension.api 'com.alibaba:arouter-api:1.5.2'//ARouter依赖
                     //datastore 存储数据，仅用于测试
                     extension.implementation "androidx.datastore:datastore-preferences:1.0.0"
                     //gson，仅用于测试
                     extension.api 'com.google.code.gson:gson:2.8.5'
+                    //retrofit
+                    extension.implementation "com.squareup.retrofit2:retrofit:2.9.0"
+                    extension.implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+                    extension.implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+                    //动态替换BaseUrl库 使用可参考 https://github.com/JessYanCoding/RetrofitUrlManager
+                    extension.implementation 'com.github.JessYanCoding:RetrofitUrlManager:v1.4.0'
+
                     break
             }
     }

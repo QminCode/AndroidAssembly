@@ -3,6 +3,14 @@ package com.abner.common.utils.ext
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.abner.common.base.activity.BaseVmActivity
+import com.abner.common.base.fragment.BaseVmFragment
+import com.abner.common.base.viewmodel.BaseViewModel
+import com.abner.common.network.AppException
+import com.abner.common.network.BaseResponse
+import com.abner.common.network.ExceptionHandle
+import com.abner.common.state.ResultState
+import com.abner.common.state.paresException
+import com.abner.common.state.paresResult
 import kotlinx.coroutines.*
 
 
@@ -50,7 +58,7 @@ fun <T> BaseVmActivity<*,*>.parseState(
  * @param onError 失败回调
  *
  */
-fun <T> BaseVmFragment<*>.parseState(
+fun <T> BaseVmFragment<*, *>.parseState(
     resultState: ResultState<T>,
     onSuccess: (T) -> Unit,
     onError: ((AppException) -> Unit)? = null,
