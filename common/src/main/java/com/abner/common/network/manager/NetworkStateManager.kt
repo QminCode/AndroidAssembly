@@ -1,6 +1,6 @@
 package com.abner.common.network.manager
 
-import com.abner.common.livedata.EventLiveData
+import com.abner.common.base.livedata.EventLiveData
 
 /**
  * @author: playboi_YzY
@@ -10,7 +10,8 @@ import com.abner.common.livedata.EventLiveData
  */
 class NetworkStateManager private constructor() {
 
-    val mNetworkStateCallback = EventLiveData<NetState>()
+    val mNetworkStateCallback =
+        EventLiveData<NetState>()
 
     companion object {
         val instance: NetworkStateManager by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {

@@ -1,4 +1,4 @@
-package com.abner.common.livedata;
+package com.abner.common.base.livedata;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

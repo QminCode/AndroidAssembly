@@ -141,41 +141,8 @@ project.ext {
             extension.testImplementation 'junit:junit:4.+'
             extension.androidTestImplementation 'androidx.test.ext:junit:1.1.2'
             extension.androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-            // ViewModel
-            extension.implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-            // ViewModel utilities for Compose
-            extension.implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-            // LiveData
-            extension.implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-            // Lifecycles only (without ViewModel or LiveData)
-            extension.implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-            // Lifecycle utilities for Compose
-            extension.implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
 
-            // Saved state module for ViewModel
-            extension.implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
-            // Annotation processor
-            extension.kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-            // alternately - if using Java8, use the following instead of lifecycle-compiler
-            extension.implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-
-            // optional - helpers for implementing LifecycleOwner in a Service
-            extension.implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
-
-            // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
-            extension.implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
-
-            // optional - ReactiveStreams support for LiveData
-            extension.implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
-
-            // optional - Test helpers for LiveData
-            extension.testImplementation "androidx.arch.core:core-testing:$arch_version"
-
-            // optional - Test helpers for Lifecycle runtime
-            extension.testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
             extension.kapt 'com.alibaba:arouter-compiler:1.5.2'
-
-            extension.implementation 'androidx.databinding:library:3.2.0-alpha11'
             if (appImplementation != "common") {
                 //common做为中间层，所有的Module都要依赖
                 extension.implementation extension.project(path: ':common')
@@ -190,6 +157,41 @@ project.ext {
 
                     break
                 case "common"://common组件是一个中间层，所有的组件都需要依赖此组件，公共的依赖便可放到这里
+                    // ViewModel
+                    extension.implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+                    // ViewModel utilities for Compose
+                    extension.implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+                    // LiveData
+                    extension.implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+                    // Lifecycles only (without ViewModel or LiveData)
+                    extension.implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+                    // Lifecycle utilities for Compose
+                    extension.implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
+
+                    // Saved state module for ViewModel
+                    extension.implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+                    // Annotation processor
+                    extension.kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+                    // alternately - if using Java8, use the following instead of lifecycle-compiler
+                    extension.implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
+                    // optional - helpers for implementing LifecycleOwner in a Service
+                    extension.implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
+
+                    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+                    extension.implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+
+                    // optional - ReactiveStreams support for LiveData
+                    extension.implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
+
+                    // optional - Test helpers for LiveData
+                    extension.testImplementation "androidx.arch.core:core-testing:$arch_version"
+
+                    // optional - Test helpers for Lifecycle runtime
+                    extension.testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
+
+                    extension.implementation 'androidx.databinding:library:3.2.0-alpha11'
+
                     extension.api 'com.alibaba:arouter-api:1.5.2'//ARouter依赖
                     //datastore 存储数据，仅用于测试
                     extension.implementation "androidx.datastore:datastore-preferences:1.0.0"

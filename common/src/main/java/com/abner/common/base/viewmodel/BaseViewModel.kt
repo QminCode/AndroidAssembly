@@ -1,7 +1,7 @@
 package com.abner.common.base.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.abner.common.livedata.EventLiveData
+import com.abner.common.base.livedata.EventLiveData
 
 /**
  * 作者　: hegaojian
