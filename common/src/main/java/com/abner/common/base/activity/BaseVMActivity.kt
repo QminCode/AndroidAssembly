@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.abner.common.base.viewmodel.BaseViewModel
 import com.abner.common.network.manager.NetState
 import com.abner.common.network.manager.NetworkStateManager
-import me.hgj.jetpackmvvm.ext.getVmClazz
+import com.abner.common.utils.notNull
+import com.abner.common.utils.ext.getVmClazz
 import me.hgj.jetpackmvvm.ext.inflateBindingWithGeneric
-import me.hgj.jetpackmvvm.ext.util.notNull
 
 /**
  * @author: playboi_YzY

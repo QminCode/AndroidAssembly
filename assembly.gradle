@@ -5,7 +5,7 @@ project.ext {
     //基础信息配置
     compileSdkVersion = 31
     buildToolsVersion = "30.0.2"
-    minSdkVersion = 21
+    minSdkVersion = 24
     targetSdkVersion = 31
     applicationId = "com.abner.assembly"
     versionCode = 1
@@ -152,6 +152,7 @@ project.ext {
                 case "app":
                     extension.implementation extension.project(path: ':account')
                     extension.implementation extension.project(path: ':code')
+                    extension.implementation extension.project(path: ':network')
                     break
                 case "account":
 
@@ -160,32 +161,25 @@ project.ext {
                     // ViewModel
                     extension.implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
                     // ViewModel utilities for Compose
-                    extension.implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+                    //extension.implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
                     // LiveData
                     extension.implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
                     // Lifecycles only (without ViewModel or LiveData)
                     extension.implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
                     // Lifecycle utilities for Compose
-                    extension.implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
+                    //extension.implementation "androidx.lifecycle:lifecycle-runtime-compose:$lifecycle_version"
 
                     // Saved state module for ViewModel
                     extension.implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
                     // Annotation processor
                     extension.kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-                    // alternately - if using Java8, use the following instead of lifecycle-compiler
-                    extension.implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+
 
                     // optional - helpers for implementing LifecycleOwner in a Service
                     extension.implementation "androidx.lifecycle:lifecycle-service:$lifecycle_version"
 
                     // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
                     extension.implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
-
-                    // optional - ReactiveStreams support for LiveData
-                    extension.implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$lifecycle_version"
-
-                    // optional - Test helpers for LiveData
-                    extension.testImplementation "androidx.arch.core:core-testing:$arch_version"
 
                     // optional - Test helpers for Lifecycle runtime
                     extension.testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$lifecycle_version"
