@@ -244,3 +244,7 @@ project.ext.setAppOrLibDefaultConfig project
 组件下的AndroidManifest.xml文件不需要有主入口
 
 ![image-20230331144731750](https://cdn.jsdelivr.net/gh/QminCode/image@main/image-20230331144731750.png)
+
+## 创建APP类
+
+![image-20230331153003747](https://cdn.jsdelivr.net/gh/QminCode/image@main/image-20230331153003747.png)
