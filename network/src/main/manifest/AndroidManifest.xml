@@ -5,7 +5,7 @@
     <application
         android:name=".NetWorkApp"
         android:icon="@mipmap/ic_launcher"
-        android:label="account"
+        android:label="network"
         android:theme="@style/Account">
         <activity android:name=".NetWorkActivity"
             android:exported="true">

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
@@ -16,21 +15,16 @@ import com.abner.common.base.viewmodel.BaseViewModel
 import com.abner.common.network.manager.NetState
 import com.abner.common.network.manager.NetworkStateManager
 import com.abner.common.utils.ext.getVmClazz
-import com.abner.common.utils.ext.inflateBindingWithGeneric
 
 /**
- * @author: playboi_YzY
- * @date: 2023/3/30 17:19
- * @description:
- * @version:
+ * 作者　: hegaojian
+ * 时间　: 2019/12/12
+ * 描述　: ViewModelFragment基类，自动把ViewModel注入Fragment
  */
-abstract class BaseVmFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment() {
+
+abstract class BaseVmFragment<VM : BaseViewModel> : Fragment() {
 
     private val handler = Handler()
-
-    //该类绑定的ViewDataBinding
-    private var _binding: DB? = null
-    val mDatabind: DB get() = _binding!!
 
     //是否第一次加载
     private var isFirst: Boolean = true
@@ -42,15 +36,14 @@ abstract class BaseVmFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragme
     /**
      * 当前Fragment绑定的视图布局
      */
-    private fun layoutId(): Int = 0
+    abstract fun layoutId(): Int
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding  = inflateBindingWithGeneric(inflater,container,false)
-        return mDatabind.root
+        return inflater.inflate(layoutId(), container, false)
     }
 
     override fun onAttach(context: Context) {
@@ -173,10 +166,5 @@ abstract class BaseVmFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragme
     override fun onDestroy() {
         super.onDestroy()
         handler.removeCallbacksAndMessages(null)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

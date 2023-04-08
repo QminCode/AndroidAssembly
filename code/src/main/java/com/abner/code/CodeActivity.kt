@@ -29,7 +29,6 @@ class CodeActivity : AppCompatActivity() {
     @Autowired(name = "params2")
     @JvmField
     var mParams2 = -1
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code)

@@ -1,7 +1,7 @@
 package com.abner.common.utils
 
 import android.text.TextUtils
-import com.abner.common.data.bean.UserInfo
+import com.abner.common.data.model.bean.UserInfo
 import com.abner.common.utils.DataStoreUtils.getSyncData
 import com.abner.common.utils.DataStoreUtils.putSyncData
 import com.google.gson.Gson

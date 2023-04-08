@@ -1,4 +1,4 @@
-package com.abner.common.data.bean
+package com.abner.common.data.model.bean
 
 /**
  *AUTHOR:AbnerMing

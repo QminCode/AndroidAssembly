@@ -28,7 +28,7 @@ import kotlinx.coroutines.*
  * @param onError 失败回调
  *
  */
-fun <T> BaseVmActivity<*,*>.parseState(
+fun <T> BaseVmActivity<*>.parseState(
     resultState: ResultState<T>,
     onSuccess: (T) -> Unit,
     onError: ((AppException) -> Unit)? = null,
@@ -58,7 +58,7 @@ fun <T> BaseVmActivity<*,*>.parseState(
  * @param onError 失败回调
  *
  */
-fun <T> BaseVmFragment<*, *>.parseState(
+fun <T> BaseVmFragment<*>.parseState(
     resultState: ResultState<T>,
     onSuccess: (T) -> Unit,
     onError: ((AppException) -> Unit)? = null,

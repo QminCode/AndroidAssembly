@@ -3,30 +3,25 @@ package com.abner.common.base.activity
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.abner.common.base.viewmodel.BaseViewModel
 import com.abner.common.network.manager.NetState
 import com.abner.common.network.manager.NetworkStateManager
-import com.abner.common.utils.notNull
 import com.abner.common.utils.ext.getVmClazz
-import com.abner.common.utils.ext.inflateBindingWithGeneric
+import com.abner.common.utils.notNull
 
 
 /**
- * @author: playboi_YzY
- * @date: 2023/3/29 21:59
- * @description:
- * @version:
+ * 作者　: hegaojian
+ * 时间　: 2019/12/12
+ * 描述　: ViewModelActivity基类，把ViewModel注入进来了
  */
-abstract class BaseVmActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity() {
+abstract class BaseVmActivity<VM : BaseViewModel> : AppCompatActivity() {
 
     lateinit var mViewModel: VM
 
-    lateinit var mDatabind: DB
-
-    fun layoutId() = 0
+    abstract fun layoutId(): Int
 
     abstract fun initView(savedInstanceState: Bundle?)
 
@@ -103,10 +98,9 @@ abstract class BaseVmActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCom
     }
 
     /**
-     * 初始化Databinding操作
+     * 供子类BaseVmDbActivity 初始化Databinding操作
      */
     open fun initDataBind(): View? {
-        mDatabind = inflateBindingWithGeneric(layoutInflater)
-        return mDatabind.root
+        return null
     }
 }

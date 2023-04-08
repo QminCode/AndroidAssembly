@@ -3,6 +3,7 @@ package com.abner.assembly
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.abner.assembly.databinding.ActivityMainBinding
 import com.abner.common.router.CommonRouterConstant
 import com.abner.common.router.CommonRouterManger
 

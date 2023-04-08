@@ -1,6 +1,6 @@
 package com.abner.common.service
 
-import com.abner.common.data.bean.UserInfo
+import com.abner.common.data.model.bean.UserInfo
 import com.alibaba.android.arouter.facade.template.IProvider
 
 /**

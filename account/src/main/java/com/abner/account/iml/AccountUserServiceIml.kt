@@ -3,7 +3,7 @@ package com.abner.account.iml
 import android.app.AlertDialog
 import android.content.Context
 import android.text.TextUtils
-import com.abner.common.data.bean.UserInfo
+import com.abner.common.data.model.bean.UserInfo
 import com.abner.common.router.CommonRouterConstant
 import com.abner.common.service.AccountUserService
 import com.abner.common.utils.DataStoreUtils
